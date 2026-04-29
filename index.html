@@ -3,119 +3,413 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ariyan Zarei</title>
-  <meta name="description" content="Ariyan Zarei — Machine Learning Research Scientist working on full-body motion tracking, geometry registration, 3D computer vision, and large-scale avatar systems." />
+  <title>Ariyan Zarei | Machine Learning Research Scientist</title>
+  <meta name="description" content="Ariyan Zarei is a Machine Learning Research Scientist at Meta Reality Labs working on digital humans, 3D computer vision, human motion tracking, geometry processing, and neural rendering." />
+  <meta name="author" content="Ariyan Zarei" />
+  <meta property="og:title" content="Ariyan Zarei | Machine Learning Research Scientist" />
+  <meta property="og:description" content="Machine learning research scientist working on digital humans, 3D vision, motion tracking, and geometry processing." />
+  <meta property="og:type" content="website" />
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: rgba(255,255,255,0.075);
-      --panel-strong: rgba(255,255,255,0.11);
-      --text: #f7f7fb;
-      --muted: #b8bfd6;
-      --accent: #8b5cf6;
-      --accent2: #22d3ee;
-      --line: rgba(255,255,255,0.14);
-      --shadow: 0 24px 80px rgba(0,0,0,0.35);
-      --radius: 24px;
+      --bg: #fbfaf8;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #64707d;
+      --soft: #eef1f4;
+      --line: #dce1e6;
+      --accent: #245b5c;
+      --accent-dark: #173d3e;
+      --max: 1060px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(139,92,246,.33), transparent 32rem),
-        radial-gradient(circle at 85% 15%, rgba(34,211,238,.20), transparent 30rem),
-        linear-gradient(180deg, #0b1020 0%, #111827 48%, #0b1020 100%);
       color: var(--text);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
+      text-rendering: optimizeLegibility;
     }
 
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    a {
+      color: inherit;
+      text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
+      text-underline-offset: 4px;
+    }
 
-    nav {
+    a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-nav {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(11,16,32,.72);
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 84px 0 50px;
       border-bottom: 1px solid var(--line);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-    .brand { font-weight: 800; letter-spacing: .02em; }
-    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
-    .nav-links a:hover { color: var(--text); }
 
-    .hero { padding: 92px 0 60px; }
-    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; }
-    .eyebrow { color: var(--accent2); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
-    h1 { font-size: clamp(42px, 7vw, 78px); line-height: .95; margin: 14px 0 18px; letter-spacing: -.05em; }
-    .subtitle { font-size: clamp(18px, 2.5vw, 24px); color: var(--muted); max-width: 750px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
     .button {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 18px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--panel);
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-    }
-    .button.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #06111f; font-weight: 800; border: 0; }
-    .button:hover { transform: translateY(-2px); background: var(--panel-strong); border-color: rgba(255,255,255,.25); }
-
-    .profile-card {
-      padding: 26px;
-      background: var(--panel);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 15px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      text-decoration: none;
     }
-    .profile-card h2 { margin: 0 0 12px; font-size: 18px; }
-    .contact-list { display: grid; gap: 10px; color: var(--muted); font-size: 15px; }
-    .contact-list a:hover { color: var(--text); }
 
-    section { padding: 42px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 18px; }
-    h2.section-title { font-size: 30px; margin: 0; letter-spacing: -.03em; }
-    .section-note { color: var(--muted); max-width: 620px; }
+    .button.primary {
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+      color: #ffffff;
+    }
 
-    .grid { display: grid; gap: 18px; }
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .button:hover {
+      transform: translateY(-1px);
+      color: var(--text);
+      border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+    }
 
-    .card {
-      background: var(--panel);
+    .button.primary:hover {
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    .contact-panel {
+      padding: 22px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.20);
+      border-radius: 8px;
+      background: var(--surface);
     }
-    .card h3 { margin: 0 0 6px; font-size: 20px; }
-    .meta { color: var(--accent2); font-weight: 700; font-size: 14px; margin-bottom: 12px; }
-    .muted { color: var(--muted); }
-    ul { margin: 12px 0 0; padding-left: 20px; }
-    li { margin: 8px 0; }
 
-    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pill { padding: 8px 12px; background: rgba(255,255,255,.08); border: 1px solid var(--line); border-radius: 999px; color: #e9ecf8; font-size: 14px; }
+    .avatar-mark {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      background: var(--accent-dark);
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 750;
+    }
 
-    .publication { padding: 16px 0; border-bottom: 1px solid var(--line); }
-    .publication:last-child { border-bottom: 0; }
-    .publication strong { color: var(--text); }
+    .contact-panel h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
 
-    footer { padding: 42px 0 70px; color: var(--muted); text-align: center; }
+    .contact-list {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 46px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 40px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .entry h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .role {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .focus {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .focus h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .focus p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .publication {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication:first-child {
+      padding-top: 0;
+    }
+
+    .publication:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .publication h3 {
+      margin: 0 0 5px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin: 0;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .compact-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     @media (max-width: 860px) {
-      .hero-grid, .grid.two, .grid.three { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hero { padding-top: 62px; }
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-grid,
+      .section-header,
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .contact-panel {
+        max-width: 420px;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .date {
+        white-space: normal;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .site-nav,
+      .actions {
+        display: none;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .wrap {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="wrap nav-inner">
       <a class="brand" href="#top">Ariyan Zarei</a>
       <div class="nav-links">
         <a href="#experience">Experience</a>
@@ -127,149 +421,254 @@
   </nav>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
+    <header class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Machine Learning · Computer Vision · Geometry</div>
-          <h1>Building large-scale systems for human motion, avatars, and 3D perception.</h1>
-          <p class="subtitle">I am a Machine Learning Research Scientist at Meta Reality Labs working on full-body motion tracking, geometry registration, hand tracking, and large-scale human-centric data pipelines.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:ariyanzarei73@gmail.com">Email me</a>
-            <a class="button" href="https://github.com/ariyanzri" target="_blank" rel="noreferrer">GitHub</a>
+          <p class="kicker">Machine Learning Research Scientist, Meta Reality Labs</p>
+          <h1>Digital humans, 3D vision, and large-scale geometry systems.</h1>
+          <p class="summary">
+            I work on full-body motion tracking, geometry registration, hand tracking, neural rendering, and data pipelines for human-centric machine learning systems. My research spans digital avatars, 3D computer vision, photogrammetry, and computational agriculture.
+          </p>
+          <div class="actions" aria-label="Profile links">
+            <a class="button primary" href="mailto:ariyanzarei73@gmail.com">Email</a>
+            <a class="button" href="assets/ariyan-zarei-cv.pdf">CV</a>
             <a class="button" href="https://www.linkedin.com/in/ariyanzarei" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button" href="https://github.com/ariyanzri" target="_blank" rel="noreferrer">GitHub</a>
             <a class="button" href="https://orcid.org/0000-0002-3670-2472" target="_blank" rel="noreferrer">ORCID</a>
           </div>
         </div>
-        <aside class="profile-card" id="contact">
-          <h2>Contact</h2>
+
+        <aside class="contact-panel" id="contact" aria-label="Contact information">
+          <div class="avatar-mark" aria-hidden="true">AZ</div>
+          <h2>Ariyan Zarei</h2>
           <div class="contact-list">
+            <span>Burlingame, California</span>
             <a href="mailto:ariyanzarei73@gmail.com">ariyanzarei73@gmail.com</a>
             <a href="mailto:ariyanzarei@meta.com">ariyanzarei@meta.com</a>
-            <span>Burlingame, CA</span>
+            <a href="https://www.linkedin.com/in/ariyanzarei" target="_blank" rel="noreferrer">linkedin.com/in/ariyanzarei</a>
             <a href="https://github.com/ariyanzri" target="_blank" rel="noreferrer">github.com/ariyanzri</a>
           </div>
         </aside>
       </div>
-    </section>
+    </header>
 
     <section id="experience">
-      <div class="container">
-        <div class="section-head">
+      <div class="wrap">
+        <div class="section-header">
           <h2 class="section-title">Experience</h2>
-          <p class="section-note">Research and engineering across machine learning, 3D vision, agricultural phenotyping, enterprise software, and infrastructure.</p>
+          <p class="section-intro">Research and engineering roles across machine learning, 3D perception, fairness modeling, phenotyping, and internal software systems.</p>
         </div>
-        <div class="grid two">
-          <article class="card">
-            <h3>Research Scientist · Meta Reality Labs</h3>
-            <div class="meta">May 2023 – Present · Burlingame, CA</div>
-            <ul>
-              <li>Led development of a large-scale human full-body motion tracking and geometry registration pipeline for the Codec Avatar program.</li>
-              <li>Designed and developed human hand tracking pipelines for multi-view studio and monocular mobile datasets.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Machine Learning Software Engineer Intern · Meta</h3>
-            <div class="meta">May 2022 – August 2022 · Menlo Park, CA</div>
-            <ul>
-              <li>Worked with the Ads Fairness team on modeling fairness strategies.</li>
-              <li>Built policy-gradient reinforcement learning and aggregated supervised learning approaches for group calibration issues.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Graduate Research Assistant · University of Arizona</h3>
-            <div class="meta">January 2019 – April 2023 · Tucson, AZ</div>
-            <ul>
-              <li>Developed MegaStitch and MegaStitch3D for geo-correction, image stitching, and 3D point cloud correction in agricultural phenotyping.</li>
-              <li>Built PlantSegNet for 3D point cloud instance segmentation of sorghum leaves and NowCasting-Nets for satellite precipitation nowcasting.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>IT Intern · NP Photonics</h3>
-            <div class="meta">June 2021 – March 2022 · Tucson, AZ</div>
-            <ul>
-              <li>Developed enterprise applications for data management, ticketing, LMS, and internal workflows using Python/Qt, SQL Server, Power Apps, SharePoint, and Power Automate.</li>
-              <li>Maintained local network infrastructure with Windows Server and Active Directory.</li>
-            </ul>
-          </article>
+        <div class="content-grid">
+          <div></div>
+          <div class="stack">
+            <article class="entry">
+              <div>
+                <h3>Research Scientist</h3>
+                <p class="role">Meta Reality Labs</p>
+                <ul>
+                  <li>Led development of a large-scale full-body motion tracking and geometry registration pipeline for the Codec Avatar program.</li>
+                  <li>Designed and developed human hand tracking pipelines for multi-view studio and monocular mobile datasets.</li>
+                </ul>
+              </div>
+              <div class="date">May 2023 to present</div>
+            </article>
+
+            <article class="entry">
+              <div>
+                <h3>Machine Learning Software Engineer Intern</h3>
+                <p class="role">Meta, Ads Fairness</p>
+                <ul>
+                  <li>Built modeling strategies for fairness calibration across user groups.</li>
+                  <li>Developed policy-gradient reinforcement learning and aggregated supervised learning approaches for group calibration issues.</li>
+                </ul>
+              </div>
+              <div class="date">May 2022 to Aug 2022</div>
+            </article>
+
+            <article class="entry">
+              <div>
+                <h3>Graduate Research Assistant</h3>
+                <p class="role">University of Arizona</p>
+                <ul>
+                  <li>Developed MegaStitch and MegaStitch3D for large-scale image stitching, geo-correction, and 3D point cloud correction in agricultural phenotyping.</li>
+                  <li>Built PlantSegNet for 3D point cloud instance segmentation and NowCasting-Nets for satellite precipitation nowcasting.</li>
+                </ul>
+              </div>
+              <div class="date">Jan 2019 to Apr 2023</div>
+            </article>
+
+            <article class="entry">
+              <div>
+                <h3>IT Intern</h3>
+                <p class="role">NP Photonics</p>
+                <ul>
+                  <li>Developed enterprise applications for data management, ticketing, LMS, and internal workflows.</li>
+                  <li>Maintained local infrastructure with Windows Server, Active Directory, SQL Server, Power Apps, SharePoint, and Power Automate.</li>
+                </ul>
+              </div>
+              <div class="date">Jun 2021 to Mar 2022</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="research">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title">Research Focus</h2>
+      <div class="wrap">
+        <div class="section-header">
+          <h2 class="section-title">Research</h2>
+          <p class="section-intro">Current work centers on scalable systems for digital humans, with earlier work in computational agriculture and remote sensing.</p>
         </div>
-        <div class="grid three">
-          <article class="card">
-            <h3>Human Motion & Avatars</h3>
-            <p class="muted">Large-scale full-body motion tracking, geometry registration, hand tracking, and human-centric dataset processing.</p>
-          </article>
-          <article class="card">
-            <h3>3D Vision & Geometry</h3>
-            <p class="muted">Point cloud processing, 3D instance segmentation, registration, and geometry pipelines for real-world sensing systems.</p>
-          </article>
-          <article class="card">
-            <h3>Computational Agriculture</h3>
-            <p class="muted">Scalable phenotyping, orthomosaicing, plant segmentation, and vision methods for genotype-to-phenotype analysis.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-head"><h2 class="section-title">Education</h2></div>
-        <div class="grid three">
-          <article class="card"><h3>PhD in Computer Science</h3><div class="meta">University of Arizona · 2018 – 2023</div><p class="muted">Advisor: Prof. Kobus Barnard · GPA: 3.80</p></article>
-          <article class="card"><h3>M.Sc. in Computer Science</h3><div class="meta">University of Arizona · 2018 – 2020</div><p class="muted">GPA: 3.80</p></article>
-          <article class="card"><h3>B.S. in Computer Science</h3><div class="meta">Shahid Beheshti University · 2013 – 2018</div><p class="muted">GPA: 3.92</p></article>
+        <div class="content-grid">
+          <div></div>
+          <div class="focus-grid">
+            <article class="focus">
+              <h3>Digital Humans</h3>
+              <p>Full-body motion tracking, hand tracking, geometry registration, avatar data processing, and human-centric model pipelines.</p>
+            </article>
+            <article class="focus">
+              <h3>3D Vision</h3>
+              <p>Point clouds, geometry processing, registration, photogrammetry, 3D instance segmentation, and neural rendering.</p>
+            </article>
+            <article class="focus">
+              <h3>Applied ML Systems</h3>
+              <p>Large-scale data pipelines, fairness modeling, satellite precipitation nowcasting, and phenotyping workflows.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="publications">
-      <div class="container">
-        <div class="section-head">
+      <div class="wrap">
+        <div class="section-header">
           <h2 class="section-title">Selected Publications</h2>
-          <p class="section-note">A compact selection from recent journal, conference, and preprint work.</p>
+          <p class="section-intro">A compact selection from recent work in digital avatars, sensing, 3D plant analysis, remote sensing, and phenomic pipelines.</p>
         </div>
-        <div class="card">
-          <div class="publication"><strong>Large-scale Codec Avatars:</strong> The unreasonable effectiveness of large-scale avatar pretraining. arXiv, 2026.</div>
-          <div class="publication"><strong>Head and body pose estimation using ultrasound sensing on smart glasses.</strong> CHI Extended Abstracts, 2026.</div>
-          <div class="publication"><strong>PlantSegNet:</strong> 3D point cloud instance segmentation of nearby plant organs with identical semantics. Computers and Electronics in Agriculture, 2024.</div>
-          <div class="publication"><strong>NowCasting-Nets:</strong> Representation learning to mitigate latency gap of satellite precipitation products. IEEE TGRS, 2022.</div>
-          <div class="publication"><strong>MegaStitch:</strong> Robust large-scale image stitching. IEEE TGRS, 2022.</div>
-          <div class="publication"><strong>PhytoOracle:</strong> Scalable, modular phenomic data processing pipelines, 2021.</div>
+        <div class="content-grid">
+          <div></div>
+          <div>
+            <article class="publication">
+              <h3>Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining</h3>
+              <p>Junxuan Li, Rawal Khirodkar, Chengan He, et al. arXiv preprint arXiv:2604.02320, 2026.</p>
+            </article>
+            <article class="publication">
+              <h3>Head and Body Pose Estimation Using Ultrasound Sensing on Smart Glasses</h3>
+              <p>Ke Li, Robin Kips, Filippo Arcadu, et al. CHI Extended Abstracts, 2026.</p>
+            </article>
+            <article class="publication">
+              <h3>PlantSegNet: 3D Point Cloud Instance Segmentation of Nearby Plant Organs with Identical Semantics</h3>
+              <p>Ariyan Zarei, Bosheng Li, James C. Schnable, et al. Computers and Electronics in Agriculture, 2024.</p>
+            </article>
+            <article class="publication">
+              <h3>MegaStitch: Robust Large-Scale Image Stitching</h3>
+              <p>Ariyan Zarei, Emmanuel Gonzalez, Nirav Merchant, Duke Pauli, Eric Lyons, and Kobus Barnard. IEEE TGRS, 2022.</p>
+            </article>
+            <article class="publication">
+              <h3>NowCasting-Nets: Representation Learning to Mitigate Latency Gap of Satellite Precipitation Products</h3>
+              <p>Mohammad Reza Ehsani, Ariyan Zarei, Hoshin Vijai Gupta, et al. IEEE TGRS, 2022.</p>
+            </article>
+            <article class="publication">
+              <h3>PhytoOracle: Scalable, Modular Phenomic Data Processing Pipelines</h3>
+              <p>Emmanuel Gonzalez, Ariyan Zarei, Nathanial Hendler, et al. 2021.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+          <p class="section-intro">Ph.D. and M.Sc. training in computer science at the University of Arizona, with undergraduate study at Shahid Beheshti University.</p>
+        </div>
+        <div class="content-grid">
+          <div></div>
+          <div class="stack">
+            <article class="entry">
+              <div>
+                <h3>Ph.D. in Computer Science</h3>
+                <p class="role">University of Arizona. Advisor: Prof. Kobus Barnard.</p>
+              </div>
+              <div class="date">2018 to 2023</div>
+            </article>
+            <article class="entry">
+              <div>
+                <h3>M.Sc. in Computer Science</h3>
+                <p class="role">University of Arizona</p>
+              </div>
+              <div class="date">2018 to 2020</div>
+            </article>
+            <article class="entry">
+              <div>
+                <h3>B.S. in Computer Science</h3>
+                <p class="role">Shahid Beheshti University</p>
+              </div>
+              <div class="date">2013 to 2018</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="skills">
-      <div class="container">
-        <div class="section-head"><h2 class="section-title">Skills</h2></div>
-        <div class="card pill-row">
-          <span class="pill">Python</span><span class="pill">PyTorch</span><span class="pill">PyTorch3D</span><span class="pill">Geometry Processing</span><span class="pill">OpenCV</span><span class="pill">Reinforcement Learning</span><span class="pill">TensorFlow / Keras</span><span class="pill">Django REST Framework</span><span class="pill">React Native</span><span class="pill">Docker</span><span class="pill">Singularity</span><span class="pill">Java</span><span class="pill">C#</span><span class="pill">C / C++</span><span class="pill">SQL Server</span>
+      <div class="wrap">
+        <div class="section-header">
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-intro">Core tools and domains most relevant to current research and engineering work.</p>
+        </div>
+        <div class="content-grid">
+          <div></div>
+          <ul class="skill-list" aria-label="Technical skills">
+            <li>Machine Learning</li>
+            <li>3D Computer Vision</li>
+            <li>Human Motion Tracking</li>
+            <li>Geometry Processing</li>
+            <li>Neural Rendering</li>
+            <li>Photogrammetry</li>
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>PyTorch3D</li>
+            <li>OpenCV</li>
+            <li>TensorFlow</li>
+            <li>Django REST Framework</li>
+            <li>Docker</li>
+            <li>Singularity</li>
+            <li>C++</li>
+            <li>SQL Server</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="highlights">
-      <div class="container">
-        <div class="section-head"><h2 class="section-title">Highlights</h2></div>
-        <div class="grid two">
-          <article class="card"><h3>Tech Launch Arizona Award</h3><p class="muted">Awarded for designing and developing an intelligent gardening application.</p></article>
-          <article class="card"><h3>WorldSkills Bronze Medal</h3><p class="muted">Bronze medal in IT Software Solutions for Business.</p></article>
-          <article class="card"><h3>Galileo Circle Scholarship</h3><p class="muted">Received the 2022 Galileo Circle Scholarship from the School of Science, University of Arizona.</p></article>
-          <article class="card"><h3>Student Leadership</h3><p class="muted">Led student clubs at the University of Arizona and Shahid Beheshti University.</p></article>
+    <section id="recognition">
+      <div class="wrap">
+        <div class="section-header">
+          <h2 class="section-title">Recognition</h2>
+          <p class="section-intro">Selected awards and leadership items from the CV.</p>
+        </div>
+        <div class="content-grid">
+          <div></div>
+          <ul class="compact-list">
+            <li>2022 Galileo Circle Scholarship, School of Science, University of Arizona.</li>
+            <li>Tech Launch Arizona Award for an intelligent gardening application.</li>
+            <li>Bronze medal, WorldSkills Competition in IT Software Solutions for Business.</li>
+            <li>Student leadership at the University of Arizona and Shahid Beheshti University.</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="year"></span> Ariyan Zarei · Built for GitHub Pages</div>
+    <div class="wrap">
+      <span>&copy; <span id="year"></span> Ariyan Zarei.</span>
+    </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
