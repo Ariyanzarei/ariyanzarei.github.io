@@ -125,6 +125,19 @@
       line-height: 1.55;
     }
 
+    .hero-interests {
+      margin-top: 24px;
+    }
+
+    .hero-interests h2 {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -277,30 +290,6 @@
       margin: 7px 0;
     }
 
-    .focus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .focus {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--surface);
-    }
-
-    .focus h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
-
-    .focus p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
     .publication {
       padding: 18px 0;
       border-bottom: 1px solid var(--line);
@@ -386,9 +375,6 @@
         white-space: normal;
       }
 
-      .focus-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media print {
@@ -429,6 +415,23 @@
           <p class="summary">
             I work on full-body motion tracking, geometry registration, hand tracking, neural rendering, and data pipelines for human-centric machine learning systems. My research spans digital avatars, 3D computer vision, photogrammetry, and computational agriculture.
           </p>
+          <div class="hero-interests" id="research">
+            <h2>Areas of Expertise and Interest</h2>
+            <ul class="skill-list" aria-label="Areas of expertise and interest">
+              <li>Digital Humans</li>
+              <li>Human Motion Tracking</li>
+              <li>Hand Tracking</li>
+              <li>Geometry Registration</li>
+              <li>3D Computer Vision</li>
+              <li>Geometry Processing</li>
+              <li>Neural Rendering</li>
+              <li>Photogrammetry</li>
+              <li>Point Cloud Processing</li>
+              <li>Large-Scale ML Data Pipelines</li>
+              <li>Computational Agriculture</li>
+              <li>Remote Sensing</li>
+            </ul>
+          </div>
           <div class="actions" aria-label="Profile links">
             <a class="button primary" href="mailto:ariyanzarei73@gmail.com">Email</a>
             <a class="button" href="assets/ariyan-zarei-cv.pdf">CV</a>
@@ -507,32 +510,6 @@
                 </ul>
               </div>
               <div class="date">Jun 2021 to Mar 2022</div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
-      <div class="wrap">
-        <div class="section-header">
-          <h2 class="section-title">Research</h2>
-          <p class="section-intro">Current work centers on scalable systems for digital humans, with earlier work in computational agriculture and remote sensing.</p>
-        </div>
-        <div class="content-grid">
-          <div></div>
-          <div class="focus-grid">
-            <article class="focus">
-              <h3>Digital Humans</h3>
-              <p>Full-body motion tracking, hand tracking, geometry registration, avatar data processing, and human-centric model pipelines.</p>
-            </article>
-            <article class="focus">
-              <h3>3D Vision</h3>
-              <p>Point clouds, geometry processing, registration, photogrammetry, 3D instance segmentation, and neural rendering.</p>
-            </article>
-            <article class="focus">
-              <h3>Applied ML Systems</h3>
-              <p>Large-scale data pipelines, fairness modeling, satellite precipitation nowcasting, and phenotyping workflows.</p>
             </article>
           </div>
         </div>
