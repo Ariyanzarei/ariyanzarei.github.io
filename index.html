@@ -176,17 +176,15 @@
       background: var(--surface);
     }
 
-    .avatar-mark {
-      width: 76px;
-      height: 76px;
-      display: grid;
-      place-items: center;
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      display: block;
       margin-bottom: 20px;
+      border: 1px solid var(--line);
       border-radius: 50%;
-      background: var(--accent-dark);
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: 750;
+      object-fit: cover;
+      background: var(--soft);
     }
 
     .contact-panel h2 {
@@ -433,7 +431,7 @@
         </div>
 
         <aside class="contact-panel" id="contact" aria-label="Contact information">
-          <div class="avatar-mark" aria-hidden="true">AZ</div>
+          <img class="profile-photo" src="assets/Ariyan-Zarei.jpg" alt="Ariyan Zarei" />
           <h2>Ariyan Zarei</h2>
           <div class="contact-list">
             <span>Burlingame, California</span>
