@@ -280,18 +280,56 @@
       margin: 7px 0;
     }
 
-    .publication {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
+    .publication-list {
+      display: grid;
+      gap: 18px;
     }
 
-    .publication:first-child {
-      padding-top: 0;
+    .publication {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
     .publication:last-child {
       padding-bottom: 0;
       border-bottom: 0;
+    }
+
+    .paper-thumb {
+      width: 76px;
+      min-height: 96px;
+      display: grid;
+      align-content: space-between;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background:
+        linear-gradient(135deg, transparent 0 78%, var(--soft) 78% 100%),
+        var(--surface);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .paper-thumb span:first-child {
+      color: #9b2f2f;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .paper-thumb span:last-child {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .paper-thumb:hover {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+      color: var(--text);
     }
 
     .publication h3 {
@@ -304,6 +342,15 @@
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 9px;
+      font-size: 14px;
+      font-weight: 650;
     }
 
     .skill-list {
@@ -359,6 +406,17 @@
       .entry {
         grid-template-columns: 1fr;
         gap: 6px;
+      }
+
+      .publication {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .paper-thumb {
+        width: 58px;
+        min-height: 76px;
+        padding: 8px;
       }
 
       .date {
@@ -513,30 +571,92 @@
         </div>
         <div class="content-grid">
           <div></div>
-          <div>
+          <div class="publication-list">
             <article class="publication">
-              <h3>Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining</h3>
-              <p>Junxuan Li, Rawal Khirodkar, Chengan He, et al. arXiv preprint arXiv:2604.02320, 2026.</p>
+              <a class="paper-thumb" href="https://arxiv.org/pdf/2604.02320" target="_blank" rel="noreferrer" aria-label="Open Large-scale Codec Avatars PDF">
+                <span>PDF</span>
+                <span>2026</span>
+              </a>
+              <div>
+                <h3>Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining</h3>
+                <p>Junxuan Li, Rawal Khirodkar, Chengan He, et al. arXiv preprint arXiv:2604.02320, 2026.</p>
+                <div class="paper-links">
+                  <a href="https://junxuan-li.github.io/lca/" target="_blank" rel="noreferrer">Project</a>
+                  <a href="https://arxiv.org/abs/2604.02320" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://arxiv.org/pdf/2604.02320" target="_blank" rel="noreferrer">PDF</a>
+                </div>
+              </div>
             </article>
             <article class="publication">
-              <h3>Head and Body Pose Estimation Using Ultrasound Sensing on Smart Glasses</h3>
-              <p>Ke Li, Robin Kips, Filippo Arcadu, et al. CHI Extended Abstracts, 2026.</p>
+              <a class="paper-thumb" href="https://doi.org/10.1145/3772363.3798385" target="_blank" rel="noreferrer" aria-label="Open Head and Body Pose Estimation paper">
+                <span>PDF</span>
+                <span>2026</span>
+              </a>
+              <div>
+                <h3>Head and Body Pose Estimation Using Ultrasound Sensing on Smart Glasses</h3>
+                <p>Ke Li, Robin Kips, Filippo Arcadu, Marek Schikora, John Ho, Chris Graf, Jim Chen, Xingxing Cai, Gawsalyan Sivapalan, Ariyan Zarei, and Yan Deblangey. CHI Extended Abstracts, 2026.</p>
+                <div class="paper-links">
+                  <a href="https://iamkeli.com/publications/" target="_blank" rel="noreferrer">Author Page</a>
+                  <a href="https://doi.org/10.1145/3772363.3798385" target="_blank" rel="noreferrer">DOI</a>
+                </div>
+              </div>
             </article>
             <article class="publication">
-              <h3>PlantSegNet: 3D Point Cloud Instance Segmentation of Nearby Plant Organs with Identical Semantics</h3>
-              <p>Ariyan Zarei, Bosheng Li, James C. Schnable, et al. Computers and Electronics in Agriculture, 2024.</p>
+              <a class="paper-thumb" href="https://doi.org/10.1016/j.compag.2024.108922" target="_blank" rel="noreferrer" aria-label="Open PlantSegNet paper">
+                <span>PDF</span>
+                <span>2024</span>
+              </a>
+              <div>
+                <h3>PlantSegNet: 3D Point Cloud Instance Segmentation of Nearby Plant Organs with Identical Semantics</h3>
+                <p>Ariyan Zarei, Bosheng Li, James C. Schnable, Eric Lyons, Duke Pauli, Kobus Barnard, and Bedrich Benes. Computers and Electronics in Agriculture, 2024.</p>
+                <div class="paper-links">
+                  <a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169924003132" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://doi.org/10.1016/j.compag.2024.108922" target="_blank" rel="noreferrer">DOI</a>
+                </div>
+              </div>
             </article>
             <article class="publication">
-              <h3>MegaStitch: Robust Large-Scale Image Stitching</h3>
-              <p>Ariyan Zarei, Emmanuel Gonzalez, Nirav Merchant, Duke Pauli, Eric Lyons, and Kobus Barnard. IEEE TGRS, 2022.</p>
+              <a class="paper-thumb" href="https://doi.org/10.1109/TGRS.2022.3141907" target="_blank" rel="noreferrer" aria-label="Open MegaStitch paper">
+                <span>PDF</span>
+                <span>2022</span>
+              </a>
+              <div>
+                <h3>MegaStitch: Robust Large-Scale Image Stitching</h3>
+                <p>Ariyan Zarei, Emmanuel Gonzalez, Nirav Merchant, Duke Pauli, Eric Lyons, and Kobus Barnard. IEEE Transactions on Geoscience and Remote Sensing, 2022.</p>
+                <div class="paper-links">
+                  <a href="https://experts.arizona.edu/en/publications/megastitch-robust-large-scale-image-stitching" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://doi.org/10.1109/TGRS.2022.3141907" target="_blank" rel="noreferrer">DOI</a>
+                </div>
+              </div>
             </article>
             <article class="publication">
-              <h3>NowCasting-Nets: Representation Learning to Mitigate Latency Gap of Satellite Precipitation Products</h3>
-              <p>Mohammad Reza Ehsani, Ariyan Zarei, Hoshin Vijai Gupta, et al. IEEE TGRS, 2022.</p>
+              <a class="paper-thumb" href="https://doi.org/10.1109/TGRS.2022.3158888" target="_blank" rel="noreferrer" aria-label="Open NowCasting-Nets paper">
+                <span>PDF</span>
+                <span>2022</span>
+              </a>
+              <div>
+                <h3>NowCasting-Nets: Representation Learning to Mitigate Latency Gap of Satellite Precipitation Products</h3>
+                <p>Mohammad Reza Ehsani, Ariyan Zarei, Hoshin Vijai Gupta, Kobus Barnard, Eric Lyons, and Ali Behrangi. IEEE Transactions on Geoscience and Remote Sensing, 2022.</p>
+                <div class="paper-links">
+                  <a href="https://experts.arizona.edu/en/publications/nowcasting-nets-representation-learning-to-mitigate-latency-gap-o/" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://doi.org/10.1109/TGRS.2022.3158888" target="_blank" rel="noreferrer">DOI</a>
+                </div>
+              </div>
             </article>
             <article class="publication">
-              <h3>PhytoOracle: Scalable, Modular Phenomic Data Processing Pipelines</h3>
-              <p>Emmanuel Gonzalez, Ariyan Zarei, Nathanial Hendler, et al. 2021.</p>
+              <a class="paper-thumb" href="https://www.frontiersin.org/articles/10.3389/fpls.2023.1112973/pdf" target="_blank" rel="noreferrer" aria-label="Open PhytoOracle PDF">
+                <span>PDF</span>
+                <span>2023</span>
+              </a>
+              <div>
+                <h3>PhytoOracle: Scalable, Modular Phenomics Data Processing Pipelines</h3>
+                <p>Emmanuel M. Gonzalez, Ariyan Zarei, Nathanial Hendler, Travis Simmons, Arman Zarei, et al. Frontiers in Plant Science, 2023.</p>
+                <div class="paper-links">
+                  <a href="https://www.frontiersin.org/articles/10.3389/fpls.2023.1112973/full" target="_blank" rel="noreferrer">Paper</a>
+                  <a href="https://www.frontiersin.org/articles/10.3389/fpls.2023.1112973/pdf" target="_blank" rel="noreferrer">PDF</a>
+                  <a href="https://doi.org/10.3389/fpls.2023.1112973" target="_blank" rel="noreferrer">DOI</a>
+                </div>
+              </div>
             </article>
           </div>
         </div>
